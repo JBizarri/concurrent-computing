@@ -55,4 +55,4 @@ def create_app():
     sec.start()
     print('logic thread started!')
     print('starting flask server')
-    app.run()
+    return app
