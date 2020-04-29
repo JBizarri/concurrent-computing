@@ -11,7 +11,6 @@ oil_tank = {
 }
 
 BASE_URL = os.environ['BASE_URL']
-REATOR_URL = os.environ['REATOR_URL']
 
 class OilTank(Resource):
     def __init__(self):
