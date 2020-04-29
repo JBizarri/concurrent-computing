@@ -17,7 +17,7 @@ def create_app():
     threads = [Thread(target=thread().run) for thread in threads_classses]
     for thread in threads:
         thread.start()
-        
+
     return app
 
 
