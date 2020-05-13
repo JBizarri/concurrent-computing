@@ -40,13 +40,16 @@ class OilTank(Resource):
                 "nome": "oleo",
                 "volume": volume 
             }
+            print(f"Envia {volume}L de oleo")
             oil_tank['volume'] -= int(volume)
         
         # requests.post(url=REATOR_URL, json=json, headers={"Content_Type": "application/json"})
         return json
     
     def put(self):
-        oil_tank['volume'] += random.randint(100, 200)
+        volume = random.randint(100, 200)
+        oil_tank['volume'] += volume
+        print(f"Recebe {volume}L de oleo")
         return 200
 
     def run(self):
@@ -54,6 +57,6 @@ class OilTank(Resource):
         while (True):
             time.sleep(5)
             try:
-                requests.put(url=self.oil_url)  
+                requests.put(url=self.oil_url)
             except Exception as e:
                 print(e)             
